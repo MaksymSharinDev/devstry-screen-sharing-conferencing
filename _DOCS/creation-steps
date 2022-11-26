@@ -1,0 +1,18 @@
+
+# Step 1
+using pnpm to create a new react project with react and typescript template 
+
+```sh
+pnpx create-react-app --template typescript ./ 
+&& rm -r node_modules package-lock.json
+&& echo auto-install-peers=true >> .npmrc
+&& pnpm i
+```
+
+# Step 2
+clean up example code 
+
+```sh
+rm public/favicon.ico public/logo192.png public/logo512.png public/manifest.json \
+&& rm src/App.test.tsx src/logo.svg src/setupTests.ts src/reportWebVitals.ts
+```
