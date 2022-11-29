@@ -16,3 +16,21 @@ clean up example code
 rm public/favicon.ico public/logo192.png public/logo512.png public/manifest.json \
 && rm src/App.test.tsx src/logo.svg src/setupTests.ts src/reportWebVitals.ts
 ```
+
+# Step 3
+add xState to start modelling the state machine 
+
+```sh
+pnpm i -E xstate @xstate/react
+```
+
+```sh
+pnpm i -E -D @xstate/cli
+```
+
+add bootstrap to start styling the app 
+
+
+```sh
+pnpm i -E bootstrap reactstrap react react-dom
+```
