@@ -58,17 +58,9 @@ not the best tradeoff when juniors are involved in a project, neither if the app
 recap, we have AppMachine that orchestrates the macro behavior of the app, and we have a machine for each scope;
 first scope of our interest to model is the liveClientMachine, that will handle the connection to the server to wait and send commands;
 
-Technically in xState we need to:
-1. Start a service
-    ```ts
-        {
-            src: "Connect",
-            id: "LiveClientMachine",
-            onDone: [
-              {
-                target: "WaitSettings",
-              },
-            ],
-        },
-    ```
-2. Transition onDone
+-----
+
+Design Choice:
+
+We gonna use a class to handle the websocket connection, to abstract the socket.io logic and provide simple methods,
+

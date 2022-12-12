@@ -1,10 +1,10 @@
-import { ROLE } from "./enums";
+import { ROLE, SCREEN_SHARE_PROTOCOL } from "./enums";
 
 // All commands 
+
 export enum COMMAND {
-    CONNECTION = "CONNECTION",
-    INVALID_PACKET = "INVALID_PACKET",
-    ROLE = "ROLE"
+  ROLE = "ROLE",
+  PROTOCOLS = "PROTOCOLS"
 }
 
 export interface PacketBody{
@@ -15,4 +15,8 @@ export interface PacketBody{
 
 export interface RolePayload {
     role: ROLE
+}
+
+export interface ProtocolsPayload {
+    protocols: SCREEN_SHARE_PROTOCOL[]
 }

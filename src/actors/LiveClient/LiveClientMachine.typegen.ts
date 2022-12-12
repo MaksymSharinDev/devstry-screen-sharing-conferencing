@@ -3,12 +3,8 @@
 export interface Typegen0 {
   "@@xstate/typegen": true;
   internalEvents: {
-    "done.invoke.liveClient.connecting:invocation[0]": {
-      type: "done.invoke.liveClient.connecting:invocation[0]";
-      data: unknown;
-      __tip: "See the XState TS docs to learn how to strongly type this.";
-    };
     "xstate.init": { type: "xstate.init" };
+    "xstate.stop": { type: "xstate.stop" };
   };
   invokeSrcNameMap: {
     establishConnection: "done.invoke.liveClient.connecting:invocation[0]";
@@ -16,20 +12,21 @@ export interface Typegen0 {
     getRole: "done.invoke.liveClient.listenConfiguration.waitRole:invocation[0]";
   };
   missingImplementations: {
-    actions: "shareInstance" | "setSocket" | "emitReady";
-    services: "getRole" | "getProtocols";
+    actions: never;
+    services: never;
     guards: never;
     delays: never;
   };
   eventsCausingActions: {
-    emitReady: "done.state.liveClient.listenConfiguration";
-    setSocket: "done.invoke.liveClient.connecting:invocation[0]";
-    shareInstance: "done.invoke.liveClient.connecting:invocation[0]";
+    assignProtocols: "MSG_PROTOCOLS";
+    assignRole: "MSG_ROLE";
+    emitConnection: "CONNECTION_ESTABLISHED";
+    emitReady: "INIT_STREAM" | "xstate.stop";
   };
   eventsCausingServices: {
     establishConnection: "xstate.init";
-    getProtocols: "done.invoke.liveClient.connecting:invocation[0]";
-    getRole: "done.invoke.liveClient.connecting:invocation[0]";
+    getProtocols: "CONNECTION_ESTABLISHED";
+    getRole: "CONNECTION_ESTABLISHED";
   };
   eventsCausingGuards: {};
   eventsCausingDelays: {};
